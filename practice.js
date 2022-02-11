@@ -71,3 +71,21 @@ user5.increament();
 console.log(user5);
 user5.login();
 user6.login();
+
+function UserCreator(name,score){
+    this.name = name;
+    this.score = score;
+}
+
+UserCreator.prototype.increament = function(){
+    this.score++;
+}
+
+UserCreator.prototype.login = function(){
+    console.log(`${this.name} is logged in`);
+}
+
+const user7 = new UserCreator("Ankit Mathur", 20);
+user7.increament();
+console.log(user7);
+console.log(user7.login());
