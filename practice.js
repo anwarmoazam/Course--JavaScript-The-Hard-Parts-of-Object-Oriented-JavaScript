@@ -161,5 +161,75 @@ const paidUserFuntions = {
 
 Object.setPrototypeOf(paidUserFuntions,userFunctions);
 
+const user10 = userCreator1('Iqra',5);
+console.log(user10);
+user10.sayName();
+
 const paidUser1 = paidUserCreator('Sana',3, 9);
-console.log(paidUser1);
+paidUser1.sayName();
+paidUser1.increaseBalance();
+console.log(paidUser1.accountBalance);
+
+// Subclassing in Solution 3
+
+const obj = {
+    num: 3,
+    increament: function(){this.num++;}
+};
+
+const otherObj = {
+    num: 10
+};
+
+obj.increament();
+console.log(obj.num);
+
+obj.increament.call(otherObj);
+
+console.log(otherObj.num);
+
+console.log(obj);
+console.log(otherObj);
+
+function userCreator2(name,score){
+    this.name = name;
+    this.score = score;
+}
+
+userCreator2.prototype.sayName = function(){
+    console.log(`I am ${this.name}`);
+}
+
+userCreator2.prototype.increament = function(){
+    this.score++;
+}
+
+const user11 = new userCreator2('Dinesh', 5);
+console.log(user11);
+user11.sayName();
+user11.increament();
+console.log(user11.score);
+
+function paidUserCreator1(paidName,paidScore,accountBalance=0){
+    userCreator2.call(this,paidName,paidScore);
+    this.accountBalance = accountBalance;
+}
+
+paidUserCreator1.prototype = Object.create(userCreator2.prototype);
+
+paidUserCreator1.prototype.increaseBalance = function(){
+    this.accountBalance++;
+}
+
+const paidUser2 = new paidUserCreator1('Kuldeep Pal',18,99);
+console.log(paidUser2);
+
+paidUser2.sayName();
+paidUser2.increament();
+paidUser2.increaseBalance();
+
+
+console.log(paidUser2.name);
+console.log(paidUser2.score);
+console.log(paidUser2.accountBalance);
+
