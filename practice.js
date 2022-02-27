@@ -233,3 +233,37 @@ console.log(paidUser2.name);
 console.log(paidUser2.score);
 console.log(paidUser2.accountBalance);
 
+// Subclassing in Solution 4
+
+class userCreator3{
+    constructor(name,score){
+        this.name = name;
+        this.score = score;
+    }
+    sayName(){
+        console.log(`I am ${this.name}`)
+    }
+    increament(){
+        this.score++
+    }
+}
+
+const user12 = new userCreator3('Sikandar',12);
+console.log(user12);
+user12.sayName();
+
+class paidUserCreator3 extends userCreator3 {
+    constructor(paidName,paidScore,accountBalance=0){
+        super(paidName,paidScore);
+        this.accountBalance = accountBalance;
+    }
+    increaseBalance(){
+        this.accountBalance++;
+    }
+}
+
+const paidUser3 = new paidUserCreator3('Anwar Moazam',15,100);
+console.log(paidUser3);
+paidUser3.increaseBalance();
+console.log(paidUser3);
+paidUser3.sayName();
