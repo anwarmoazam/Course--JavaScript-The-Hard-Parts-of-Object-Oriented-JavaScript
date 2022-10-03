@@ -79,3 +79,40 @@ function newUserCreator(name,score){
 const user7 = newUserCreator('ABC',5);
 user7.increment();
 console.log('User 7 : ',user7);
+
+// new Keyword -- 1. auto created this object. 2. Set the proto (__proto__) to link function object combo subobject access. 3. return automatically.
+
+function UserCreatorWithNewKeyword(name,score){
+    this.name = name;
+    this.score = score;
+}
+
+UserCreatorWithNewKeyword.prototype.increment = function(){
+    this.score++;
+}
+
+UserCreatorWithNewKeyword.prototype.login = function(){
+    `Welcome ${this.name}`;
+}
+
+UserCreatorWithNewKeyword.prototype.increment1 = function(){
+    function add1(){
+        this.score++;
+    }
+    add1();
+}
+
+UserCreatorWithNewKeyword.prototype.increment2 = function(){
+    const add1 = () => this.score++;
+    add1();
+}
+
+const user8 = new UserCreatorWithNewKeyword('XYZ',11);
+console.log('User 8 : ',user8);
+user8.increment();
+console.log('User 8 : ',user8);
+user8.increment1(); //normal function with this
+console.log('User 8 : ',user8);
+user8.increment2(); //arrow function with this
+console.log('User 8 : ',user8);
+
