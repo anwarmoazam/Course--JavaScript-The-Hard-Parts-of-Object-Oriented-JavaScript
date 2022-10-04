@@ -86,3 +86,4 @@ console.log(paidUser2);
 // Ask for call and apply
 
 // Create an Object with a class
+// why subclass parameters not change when we inherit with extends
