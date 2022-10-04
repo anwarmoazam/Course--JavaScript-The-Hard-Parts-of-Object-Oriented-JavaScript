@@ -84,47 +84,4 @@ paidUser2.increaseBalance();
 console.log(paidUser2);
 
 // Create an Object with a class
-<<<<<<< HEAD
 // why subclass parameters not change when we inherit with extends
-=======
-
-class UserCreator{
-    constructor(name,score){
-        this.name = name;
-        this.score = score;
-    }
-    sayName = function(){
-        console.log(`I am ${this.name}`);
-    }
-    increaseScore = function(){
-        this.score++;
-    }
-}
-
-class PaidUserCreator extends UserCreator{
-    constructor(paidName,paidScore,accountBalance){
-        super(paidName,paidScore);
-        this.accountBalance = accountBalance;
-    }
-    increaseBalance = function(){
-        this.accountBalance++;
-    }
-}
-
-const user3 = new UserCreator('Mohsin',0);
-console.log(user3);
-user3.sayName();
-user3.increaseScore();
-console.log(user3);
-
-const paidUser3 = new PaidUserCreator('Sikandar',0,0);
-console.log(paidUser3);
-paidUser3.increaseBalance();
-paidUser3.sayName();
-paidUser3.increaseScore();
-
-console.log(paidUser3.accountBalance);
-
-// Ask for call and apply
-// paidName and paidScore change to name and score when extends and super use
->>>>>>> 150e487b31b778464706a758d14872a4787f6c73
