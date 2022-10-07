@@ -128,4 +128,4 @@ console.log(paidUser3.accountBalance);
 // paidName and paidScore change to name and score when extends and super use
 
 // 07-10-2022
->>>>>>> 08a0e6b07b822e41fae5b7c501c3e56731ff354a
+
