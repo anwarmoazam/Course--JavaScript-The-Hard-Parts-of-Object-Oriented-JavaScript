@@ -84,6 +84,8 @@ paidUser2.increaseBalance();
 console.log(paidUser2);
 
 // Create an Object with a class
+// why subclass parameters not change when we inherit with extends
+=======
 
 class UserCreator{
     constructor(name,score){
@@ -124,5 +126,9 @@ console.log(paidUser3.accountBalance);
 
 // Ask for call and apply
 // paidName and paidScore change to name and score when extends and super use
+<<<<<<< HEAD
 
 // 07-10-2022
+=======
+>>>>>>> 150e487b31b778464706a758d14872a4787f6c73
+>>>>>>> 08a0e6b07b822e41fae5b7c501c3e56731ff354a
